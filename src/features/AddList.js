@@ -27,7 +27,7 @@ const AddList = ({ handleDelete, handleEdit, loggedIn }) => {
       id={key}
       className={
         data[key].completed
-          ? "list-element bg-success border-green"
+          ? "list-element bg-green border-green"
           : "list-element"
       }
     >
