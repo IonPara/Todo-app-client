@@ -8,8 +8,13 @@ export const toDoSlice = createSlice({
 
   // Create the initial value object
   initialState: {
-    nextId: 1,
-    data: {},
+    nextId: 2,
+    data: {
+      1: {
+        content: "To add and save your to do list login/sign up.",
+        completed: true,
+      },
+    },
   },
 
   // Here are the reducers that we will use to manipulate the initial state

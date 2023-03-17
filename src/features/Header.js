@@ -6,17 +6,19 @@ const Header = ({ loggedIn, name }) => {
   return (
     <div className="header-container flex-container">
       {/* Here I used ternary to display the welcome when the user has logged in*/}
-      <h3>{loggedIn ? "Welcome " + name : "To Do"}</h3>
+      <NavLink className="nav-element" to={"/"}>
+        <h3>{loggedIn ? "Welcome " + name : "To Do"}</h3>
+      </NavLink>
       <nav className="nav">
         <ul className="nav-list">
           {/* Here I used ternary to display the link when the user is logOut*/}
-          <NavLink className="nav-element" to={"/"}>
+          <NavLink className="nav-element" to={"/login"}>
             {loggedIn ? "" : "Login"}
           </NavLink>
           {/* Here I used ternary to display the link when the user is logOut*/}
           {!loggedIn ? (
             <NavLink className="nav-element" to={!loggedIn ? "/signUp" : "/"}>
-              SignUp
+              Sign up
             </NavLink>
           ) : (
             ""
@@ -28,7 +30,7 @@ const Header = ({ loggedIn, name }) => {
               className="nav-element"
               to={"/"}
             >
-              LogOut
+              Log out
             </NavLink>
           ) : (
             ""

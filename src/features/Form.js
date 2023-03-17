@@ -33,7 +33,7 @@ const Form = ({ input, setInput, addToDo }) => {
         New value:{" "}
         <input
           maxLength={140}
-          className="input"
+          className="input mt-2"
           type="text"
           name="value"
           // Set the state of the input to its value
@@ -43,7 +43,7 @@ const Form = ({ input, setInput, addToDo }) => {
       </label>
       {/* Add a button that will be disabled when the input field is empty */}
       <Button
-        className="add-item button mt-2"
+        className="add-item button"
         type="submit"
         disabled={input ? false : true}
       >

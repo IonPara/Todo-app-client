@@ -8,7 +8,7 @@ import EditAlert from "./EditAlert";
 import Button from "react-bootstrap/Button";
 
 // Create a component that will add our list to the app
-const AddList = ({ handleDelete, handleEdit }) => {
+const AddList = ({ handleDelete, handleEdit, loggedIn }) => {
   // Call dispatch
   const dispatch = useDispatch();
   // Use useSelector to access the state from toDo
@@ -16,11 +16,21 @@ const AddList = ({ handleDelete, handleEdit }) => {
   const data = list.data;
   // Create an array that will store all of the keys from the object
   const allKeys = Object.keys(data);
+  const removedFirst = allKeys.filter((key) => key != 1);
+  const keys = loggedIn ? removedFirst : allKeys;
   // Map through the array with the keys
   // For every key create a list element
 
-  const map = allKeys.map((key) => (
-    <li key={key} id={key} className="list-element">
+  const map = keys.map((key) => (
+    <li
+      key={key}
+      id={key}
+      className={
+        data[key].completed
+          ? "list-element bg-success border-green"
+          : "list-element"
+      }
+    >
       {/* Add an input element of checkbox type */}
       {/* When it's clicked call dispatch with the completed reducer, that will take the key as its argument */}
       <input

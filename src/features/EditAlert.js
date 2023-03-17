@@ -37,9 +37,7 @@ function EditAlert({ index, handleEdit }) {
         variant="success"
       >
         {/* Add alert heading */}
-        <Alert.Heading className="alert-heading">
-          Enter new value:
-        </Alert.Heading>
+        <Alert.Heading className="alert-heading ">New value:</Alert.Heading>
         {/* Create a form tha will have an input field, add the "handleSubmit" to onSubmit event */}
         <form
           className="Form"
@@ -59,14 +57,24 @@ function EditAlert({ index, handleEdit }) {
             />
           </label>
           {/* Add a button and make it disabled when the the input field is empty */}
-          <Button
-            className="button"
-            type="submit"
-            disabled={input ? false : true}
-            variant="outline-success"
-          >
-            Save
-          </Button>
+          <div>
+            <Button
+              className="button"
+              type="submit"
+              disabled={input ? false : true}
+              variant="outline-success"
+            >
+              Save
+            </Button>
+
+            <Button
+              className="button editItem"
+              onClick={() => setShow(false)}
+              variant="outline-primary"
+            >
+              Close
+            </Button>
+          </div>
         </form>
       </Alert>
       {/* Add the button that will change the state of the alert */}

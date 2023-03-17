@@ -27,6 +27,8 @@ function App() {
   const dispatch = useDispatch();
   // This will navigate to different page
   const navigate = useNavigate();
+  const URL = "https://todo-app-server-epyl.onrender.com";
+
   const fetchLogin = async (e) => {
     try {
       //  Create the option to fetch
@@ -40,10 +42,7 @@ function App() {
       e.preventDefault();
       // Fetch the data from the server
       // If the response is not ok throw the error
-      const response = await fetch(
-        "https://todo-app-server-epyl.onrender.com/users/login",
-        options
-      );
+      const response = await fetch(`${URL}/users/login`, options);
       if (!response.ok) throw Error("Did not receive the expected data");
       // Convert the data from json
       const data = await response.json();
@@ -75,10 +74,7 @@ function App() {
       e.preventDefault();
       // Fetch the data from the server
       // If the response is not ok throw the error
-      const response = await fetch(
-        "https://todo-app-server-epyl.onrender.com/users/signUp",
-        options
-      );
+      const response = await fetch(`${URL}/users/signUp`, options);
       if (!response.ok) throw Error("Something went wrong");
       // Convert the data from json
       const data = await response.json();
@@ -113,7 +109,7 @@ function App() {
         // If the response is not ok throw the error
         if (token) {
           const response = await fetch(
-            `https://todo-app-server-epyl.onrender.com/users/${signUp.username}`,
+            `${URL}/users/${signUp.username}`,
             options
           );
           if (!response.ok) throw Error("Did not receive the expected data");
@@ -164,10 +160,7 @@ function App() {
       e.preventDefault();
       // Fetch the data from the server
       // If the response is not ok throw the error
-      const response = await fetch(
-        "https://todo-app-server-epyl.onrender.com/users/addTodo",
-        options
-      );
+      const response = await fetch(`${URL}/users/addTodo`, options);
       if (!response.ok) throw Error("Something went wrong");
       // Convert the data from json
       const data = await response.json();
@@ -192,10 +185,7 @@ function App() {
       };
       // Fetch the data from the server
       // If the response is not ok throw the error
-      const response = await fetch(
-        "https://todo-app-server-epyl.onrender.com/users/delete",
-        options
-      );
+      const response = await fetch(`${URL}/users/delete`, options);
       if (!response.ok) throw Error("Something went wrong");
       // Convert the data from json
       const data = await response.json();
@@ -222,10 +212,7 @@ function App() {
       };
       // Fetch the data from the server
       // If the response is not ok throw the error
-      const response = await fetch(
-        "https://todo-app-server-epyl.onrender.com/users/edit",
-        options
-      );
+      const response = await fetch(`${URL}/users/edit`, options);
       if (!response.ok) throw Error("Something went wrong");
     } catch (error) {
       alert(error);
@@ -242,21 +229,24 @@ function App() {
         <Route
           path={"/"}
           element={
-            loggedIn ? (
-              <ToDo
-                input={input}
-                setInput={setInput}
-                addToDo={addToDo}
-                handleDelete={handleDelete}
-                handleEdit={handleEdit}
-              />
-            ) : (
-              <Login
-                signUp={signUp}
-                setSignUp={setSignUp}
-                handleSubmit={fetchLogin}
-              />
-            )
+            <ToDo
+              input={input}
+              setInput={setInput}
+              addToDo={addToDo}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+              loggedIn={loggedIn}
+            />
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <Login
+              signUp={signUp}
+              setSignUp={setSignUp}
+              handleSubmit={fetchLogin}
+            />
           }
         />
         {/* The route to the signup page */}
