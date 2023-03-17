@@ -17,8 +17,9 @@ The app is built using MongoDB, Express, React, and Node.js (the MERN stack).<br
 <pre>● The app authenticates users using JWT (JSON Web Tokens) to safely transmit the information between client and server.
 ● The API keys are saved as environment variables.</pre> 
 
-:floppy_disk: The app was deployed on [render.com](https://render.com/)
- <pre>  Back-end and front-end separately to make the app safer, easier to upgrade and easier to debug.</pre>
+:floppy_disk: The front-end of the app was deployed on [Netlify.com](https://netlify.com/)
+:floppy_disk: The back-end of the app was deployed on [Heroku.com](https://heroku.com/)
+ <pre>  Back-end and front-end separately to make the app safer and easier to debug.</pre>
 
 The goal of this project is to showcase the ability to build and deploy a full stack application. 
 
@@ -40,7 +41,7 @@ The goal of this project is to showcase the ability to build and deploy a full s
 
 ## 📘 <a id="setup">Setup</a>:
 
-## You can visualise it by clicking on the link [here](https://todo-app-g1mr.onrender.com/)
+## You can visualise it by clicking on the link [here](https://todo-app-g1mr.netlify.app)
 
 ## Or by following these steps :point_down:
 
