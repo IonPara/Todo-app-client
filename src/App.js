@@ -27,7 +27,7 @@ function App() {
   const dispatch = useDispatch();
   // This will navigate to different page
   const navigate = useNavigate();
-  const URL = "https://todo-app-server-gmr1.herokuapp.com";
+  const URL = "https://todo-app-server-1.up.railway.app";
 
   const fetchLogin = async (e) => {
     try {
