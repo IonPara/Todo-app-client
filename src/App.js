@@ -240,7 +240,7 @@ function App() {
           }
         />
         <Route
-          path="login"
+          path="#/login"
           element={
             <Login
               signUp={signUp}
@@ -251,7 +251,7 @@ function App() {
         />
         {/* The route to the signup page */}
         <Route
-          path="signUp"
+          path="#/signUp"
           element={
             <SignUp
               signUp={signUp}
